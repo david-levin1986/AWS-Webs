@@ -30,8 +30,11 @@ pipeline {
                     // some block
                     sh '''
                     aws --version
+                    echo "Starting Uplode WebSite to AWS"
                     aws s3 rm s3://$MY_BUCKET --recursive
                     aws s3 sync motivation s3://$MY_BUCKET
+                    echo "Starting WebSite Testing"
+                    aws s3 ls s3:////$MY_BUCKET/index.html
                     '''
            } 
 
