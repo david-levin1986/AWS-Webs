@@ -2,9 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Wellcom') {
+        stage('Testing Files') {
             steps {
-                echo 'Wellcom to AWS Web Deploy Tool'
+                sh '''
+                    echo "Wellcom to AWS Deploy WebSites"
+                    test -f motivation/inder.html
+                '''
+                
             }
         }
         stage('AWS Docker') {
