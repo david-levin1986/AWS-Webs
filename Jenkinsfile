@@ -34,7 +34,7 @@ pipeline {
                     aws s3 rm s3://$MY_BUCKET --recursive
                     aws s3 sync motivation s3://$MY_BUCKET
                     echo "Starting WebSite Testing"
-                    aws s3 ls s3:////$MY_BUCKET/index.html
+                    aws s3 ls s3:////$MY_BUCKET/index.html || { echo "Index.html nut exist the WebSite Deployment Faild"; exit 1; }
                     '''
            } 
 
