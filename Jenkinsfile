@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Wellcom to AWS Deploy WebSites"
-                    test -f motivation/inder.html
+                    test -f motivation/iindex.html
                 '''
                 
             }
