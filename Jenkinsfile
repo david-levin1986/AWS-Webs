@@ -22,6 +22,7 @@ pipeline {
 
             environment {
                 MY_BUCKET = 'learn-jenkins-david'
+                motivation_URL 'http://learn-jenkins-david.s3-website-us-east-1.amazonaws.com'
             }
 
 
@@ -35,7 +36,7 @@ pipeline {
                     aws s3 sync motivation s3://$MY_BUCKET
                     echo "Starting WebSite Testing"
                     aws s3 ls s3:////$MY_BUCKET/index.html || { echo "Index.html nut exist the WebSite Deployment Faild"; exit 1; }
-                    curl -s https://$MY_BUCKET/index.html | grep "Welcome to my website" || { echo "Error The Index Not Fund in the WebSite"; exit 1; }
+                    curl -s https://$motivation_URL | grep "Welcome to my website" || { echo "Error The Index Not Fund in the WebSite"; exit 1; }
                     '''
            } 
 
