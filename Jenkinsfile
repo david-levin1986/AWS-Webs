@@ -25,6 +25,7 @@ pipeline {
                     // some block
                     sh '''
                     aws --version
+                    aws s3 sync Motivation s3://$MY_BUCKET
                     '''
            } 
 
