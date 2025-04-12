@@ -26,7 +26,8 @@ pipeline {
                     // some block
                     sh '''
                     aws --version
-                    aws s3 sync motivation s3://$MY_BUCKET
+                    aws s3 rm s3://$MY_BUCKET --recursive
+                    #aws s3 sync motivation s3://$MY_BUCKET
                     '''
            } 
 
