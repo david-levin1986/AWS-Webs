@@ -22,7 +22,7 @@ pipeline {
 
             environment {
                 MY_BUCKET = 'learn-jenkins-david'
-                motivation_URL 'http://learn-jenkins-david.s3-website-us-east-1.amazonaws.com'
+                motivation_URL = 'http://learn-jenkins-david.s3-website-us-east-1.amazonaws.com'
             }
 
 
